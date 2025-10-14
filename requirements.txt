@@ -22,4 +22,6 @@ Werkzeug==3.1.3
 pickle-mixin
 plotly
 shap
+lightgbm
 matplotlib
+
