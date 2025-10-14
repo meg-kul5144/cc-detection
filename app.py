@@ -109,10 +109,10 @@ def predict():
         payment_by_bill = 1
     payment_by_bill = scaler_pay.transform(np.array(payment_by_bill).reshape(-1,1))
      
-    bill_by_limit = average_bill/lim_bal
+    bill_by_limit = average_bill/LIMIT_BAL
     bill_by_limit = scaler_bill_lt.transform(np.array(bill_by_limit).reshape(-1,1))
 
-    PAY0_BILLAMT1 = pay_0 * bill_amt1
+    PAY0_BILLAMT1 = pay_0 * BILL_AMT1
     PAY0_BILLAMT1 = scaler_pay0bill.transform(np.array(PAY0_BILLAMT1).reshape(-1,1))
     
     PAY2_BILLAMT2 = pay_2 * bill_amt2
@@ -151,3 +151,4 @@ def predict():
 if __name__ == "__main__":
 
     flask_app.run(debug=True)
+
