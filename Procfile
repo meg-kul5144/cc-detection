@@ -1,1 +1,1 @@
-web: gunicorn cc_fraud:flask_app
+web: gunicorn app:flask_app
