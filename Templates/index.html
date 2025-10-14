@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+<style>
+h1 {text-align: center; font-family: "Arial Black"; font-size: 22px;}
+h2 {text-align: center; font-family: "Arial Black"; font-size: 22px;}
+h3 {text-align: center; font-family: "TimesNewRoman"; font-style:italic; font-size: 22px;}
+h4 {text-align: center; font-family: "TimesNewRoman"; font-size: 18px;}
+ul {display: flex;}
+ul li {float: center ;margin: 10px;}
+
+p {text-align: center; font-style= italic;}
+div {text-align: center;font-style= italic;}
+</style>
+<title>Element Background Color Example</title>
+  
+</head>
+
+<body style="background-color: lightgoldenrodyellow;">
+ <div class="login">
+
+      <h1>Credit Card default prediction</h1>
+
+
+       <!-- Main Input For Receiving Query to our ML -->
+       <form action="{{ url_for('predict')}}"method="post">
+     
+      <h3> Enter the credit extended to the client </h3>
+
+
+      <br>
+      <h4>
+      <label for="LIMIT_BAL">Client credit:</label>
+      <input type="text" name="Client credit" placeholder="Client credit" min=0 required="required"/>
+       </h4>
+       <br>
+
+      <h3> Enter the outstanding bill for each of the previous six months </h3>
+
+        <br>
+        <ul>
+        <li>
+        <h4>
+        <label for="BILL_AMT1">September bill:</label>
+        <input type="text" name="September bill" placeholder="Bill for September" min=0 required="required" />
+         </h4>
+        </li>
+        <br>
+
+        <br>
+         <li>
+        <h4>
+        <label for="BILL_AMT2">August bill:</label>
+        <input type="text" name="August bill" placeholder="Bill for August" min=0 required="required" />
+         </h4>
+         </li>
+        <br>
+        
+
+        <br>
+         <li>
+        <h4>
+        <label for="BILL_AMT3">July bill:</label>
+        <input type="text" name="July bill" placeholder="Bill for July" min=0 required="required" />
+        </h4>
+        </li>
+        <br>
+        
+
+        <br>
+         <li>
+        <h4>
+        <label for="BILL_AMT4">June bill:</label>
+        <input type="text" name="June bill" placeholder="Bill for June" min=0 required="required" />
+        </h4>
+        </li>
+        <br>
+        
+        <br>
+         <li>
+        <h4>
+        <label for="BILL_AMT5">May bill:</label>
+        <input type="text" name="May bill" placeholder="Bill for May" min=0 required="required" />
+        </h4>
+         </li>
+        <br>
+        
+
+        <br>
+         <li>
+        <h4>
+        <label for="BILL_AMT6">April bill:</label>
+        <input type="text" name="April bill" placeholder="Bill for April" min=0 required="required" />
+          </h4>
+         </li>
+          </ul>
+        <br>
+
+      <h3> Enter the previous payments made by the customers in each of the six months  </h3>
+
+        <br>
+        <ul>
+        <li>
+        <h4>
+        <label for="PAY_AMT1">September payment:</label>
+        <input type="text" name="September payment" placeholder="Payment in September" min=0 required="required"/>
+        </h4>
+        </li>
+        <br>
+        
+        <br>
+        <li>
+        <h4>
+        <label for="PAY_AMT2">August payment:</label>
+        <input type="text" name="August payment" placeholder="Payment in August" min=0 required="required"/>
+        </h4>
+        <li>
+        <br>
+        
+        <br>
+        <li>
+        <h4>
+        <label for="PAY_AMT3">July payment:</label>
+        <input type="text" name="July payment" placeholder="Payment in July" min=0 required="required"/>
+        </h4>
+        </li>
+        <br>
+
+        <br>
+        <li>
+        <h4>
+        <label for="PAY_AMT4">June payment:</label>
+        <input type="text" name="June payment" placeholder="Payment in June" min=0 required="required"/>
+        </h4>
+        </li>
+        <br>
+
+       
+        <br>
+        <li>
+        <h4>
+        <label for="PAY_AMT5">May payment:</label>
+        <input type="text" name="May payment" placeholder="Payment in May" min=0 required="required"/>
+        </h4>
+        </li>
+        <br>
+   
+        <br>
+        <li>
+        <h4>
+        <label for="PAY_AMT6">April payment:</label>
+        <input type="text" name="April payment" placeholder="Payment in April" min=0 required="required"/>
+        </h4>
+        </li>
+        </ul>
+        <br>
+
+       <h3> Enter the number of months of payment delay in each of the six months </h3>
+
+        <br>
+        <ul>
+        <li>
+        <h4>
+        <label for="PAY_0">Delay in September:</label>
+        <input type="text" name="Delay in September" 
+        placeholder="Payment delay in number of months in September"required="required"/>
+        </h4>
+        </li>
+        <br>
+      
+        <br>
+        <li>
+        <h4>
+        <label for="PAY_2">Delay in August:</label>
+        <input type="text" name="Delay in August" 
+         placeholder="Payment delay in number of months in August"required="required"/>
+        </h4>
+        </li>
+        <br>
+
+       <br>
+        <li>
+        <h4>
+        <label for="PAY_3">Delay in July:</label>
+        <input type="text" name="Delay in July" 
+         placeholder="Payment delay in number of months in July"required="required"/>
+        </h4>
+        </li>
+        <br>
+
+        <br>
+        <li>
+        <h4>
+        <label for="PAY_4">Delay in June:</label>
+        <input type="text" name="Delay in June" 
+         placeholder="Payment delay in number of months in June"required="required"/>
+        </h4>
+        </li>
+        <br>
+
+
+        <br>
+        <li>
+        <h4>
+        <label for="PAY_5">Delay in May:</label>
+        <input type="text" name="Delay in May" 
+         placeholder="Payment delay in number of months in May"required="required"/>
+        </h4>
+        </li>
+        <br>
+   
+        <br>
+        <li>
+        <h4>
+        <label for="PAY_6">Delay in April:</label>
+        <input type="text" name="Delay in April" 
+         placeholder="Payment delay in number of months in April"required="required"/>
+        </h4>
+        </li>
+        </ul>
+        <br>
+
+<br>
+
+<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+
+ </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+ <div class="graph-container">
+ <div id="feature importance" class="graph"> </div>
+
+  </div>
+   
+  <script>
+
+   var graph_json1  = {{ graph_json1 | safe }};
+   Plotly.newPlot('feature importance', graph_json1.data, graph_json1.layout);
+
+     
+</script> 
+
+
+
+</body>
+</html>
