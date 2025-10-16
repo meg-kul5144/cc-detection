@@ -124,7 +124,7 @@ def predict():
                 PAY0_BILLAMT1, PAY2_BILLAMT2))
     
     prediction = model.predict(pd.DataFrame(features.reshape(1, -1), columns=[x_test.columns]))
-    predict_prob = model.predict_proba(features)
+    predict_prob = model.predict_proba(pd.DataFrame(features.reshape(1, -1), columns=[x_test.columns]))
 
     shap_exp = shap.TreeExplainer(model)
     shap_val = shap_exp.shap_values(features)
@@ -149,4 +149,5 @@ def predict():
     
 
 if __name__ == "__main__":
+
     flask_app.run(debug=True)
