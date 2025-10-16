@@ -77,8 +77,8 @@ def predict():
     average_pay = (PAY_AMT1 + pay_amt2 + pay_amt3 + pay_amt4 + PAY_AMT5 + PAY_AMT6)/6
 
     PAY_AMT1 =  scaler_pay1.transform(pd.DataFrame(np.array(PAY_AMT1).reshape(-1,1), columns=['PAY_AMT1']))
-    PAY_AMT5 =  scaler_pay1.transform(pd.DataFrame(np.array(PAY_AMT5).reshape(-1,1), columns=['PAY_AMT5']))
-    PAY_AMT6 =  scaler_pay1.transform(pd.DataFrame(np.array(PAY_AMT6).reshape(-1,1), columns=['PAY_AMT6']))
+    PAY_AMT5 =  scaler_pay1.transform(pd.DataFrame(np.array(PAY_AMT5).reshape(-1,1), columns=['PAY_AMT1']))
+    PAY_AMT6 =  scaler_pay1.transform(pd.DataFrame(np.array(PAY_AMT6).reshape(-1,1), columns=['PAY_AMT1']))
 
 
     def pay_score(pay):
@@ -150,4 +150,5 @@ def predict():
     
 
 if __name__ == "__main__":
+
     flask_app.run(debug=True)
